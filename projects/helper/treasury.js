@@ -11,7 +11,6 @@ function treasuryExports(config) {
   chains.forEach(chain => {
     let { ownTokenOwners = [], ownTokens = [], owners = [], fetchTokens = false, tokens = [], blacklistedTokens = [] } = config[chain]
     if (chain === 'solana')  config[chain].solOwners = owners
-    if (chain === 'solana')  config[chain].solOwners = owners
     const tvlConfig = { ...config[chain] }
     tvlConfig.blacklistedTokens = [...ownTokens, ...blacklistedTokens]
     if(fetchTokens === true){
